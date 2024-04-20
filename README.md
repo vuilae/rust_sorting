@@ -25,7 +25,7 @@ Save the `Cargo.toml` file and close the text editor.
 
 4. Import functions from sorting_library in main.rs
    ```main.rs
-   use sorting_library::sorting::{quick_sort, selection_sort, insertion_sort, merge_sort};
+   use sorting_library::{quick_sort, selection_sort, insertion_sort, merge_sort};
    ```
 5. In order to use the functions, declare mutable array of any object type, ex strings, chars, floats, numbers.
 
