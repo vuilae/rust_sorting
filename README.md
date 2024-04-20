@@ -7,30 +7,36 @@ This Rust library provides sorting algorithms including quick sort, selection so
 Before you begin, ensure that the folder where you want to create your Cargo project does not contain any Cyrillic or other special characters.
 
 1. Create a new Cargo project by running the following command in your terminal:
-
    ```bash
    cargo init [folder name]
    ```
 
 2. Navigate into the newly created `sort` directory:
-
    ```bash
    cd [folder name]
    ```
 
 3. Open the `Cargo.toml` file in a text editor and add the following dependencies for your sorting library:
-
    ```toml
    [dependencies]
    sorting_library = { git = "https://github.com/vuilae/rust_sorting.git" }
    ```
+Save the `Cargo.toml` file and close the text editor.
 
-4. Save the `Cargo.toml` file and close the text editor.
+4. Import functions from sorting_library in main.rs
+   ```main.rs
+   use sorting_library::sorting::{quick_sort, selection_sort, insertion_sort, merge_sort};
+   ```
+5. In order to use the functions, declare mutable array of any object type, ex strings, chars, floats, numbers.
 
-Now you can import and use the sorting functions in your Rust code. Add the following code to your Rust file (e.g., `main.rs`):
-```rust
-use sorting_library::{quick_sort, selection_sort, insertion_sort, merge_sort};
-
+```bash
+    let mut floats = vec![3.5, 1.2, 5.6, 2.3, 4.7];
+    selection_sort(&mut floats);
+    println!("Selection Sorted: {:?}", floats);
+```
+main.rs
+Using all functions looks like this:
+```main.rs
 fn main() {
     let mut numbers = vec![5, 2, 7, 3, 9, 1, 4, 6, 8];
     quick_sort(&mut numbers);
@@ -44,13 +50,15 @@ fn main() {
     selection_sort(&mut floats);
     println!("Selection Sorted: {:?}", floats);
 
-    let mut numbers4 = vec![4444, 22, 369, 7111, 9910, 0, 3, -22222, -77, 554];
-    merge_sort(&mut numbers4);
-    println!("Merge Sorted: {:?}", numbers4);
+    let mut strings = vec!["banana", "apple", "orange", "grape", "kiwi"];
+    insertion_sort(&mut strings);
+    println!("Insertion Sorted: {:?}", strings);
+    
 }
 ```
 
 To build and run your Rust program, use the following command in the terminal:
+!Remember there shouldn't be any Cyrillic or other special characters in your path.
 ```bash
 cargo build
 cargo run
