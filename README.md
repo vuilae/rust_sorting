@@ -22,7 +22,7 @@ Before you begin, ensure that the folder where you want to create your Cargo pro
 
    ```toml
    [dependencies]
-   sorting_library = { git = "https://github.com/vuilae/bl-sorting.git" }
+   sorting_library = { git = "https://github.com/vuilae/rust_sorting.git" }
    ```
 
 4. Save the `Cargo.toml` file and close the text editor.
